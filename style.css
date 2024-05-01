@@ -3,7 +3,7 @@ body{
     justify-content: center;
     align-items: center;
     user-select: none;
-    height: 90vh;
+    height: 100vh;
 }
 
 h2
@@ -13,17 +13,21 @@ h2
     font-weight: 500;
     font-size: 3rem;
     margin: 1rem;
+    margin-top: 0rem;
 }
 
-#main
+.main
 {
     background-color: black;
     display: grid;
-    gap: 1px;
     padding: 1px;
     width: 980px;
     height: 980px;
     margin-left: 1rem;
+}
+.GridLines
+{
+    gap: 1px !important;
 }
 #panel
 {
@@ -53,17 +57,40 @@ h2
     font-weight: 500;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
-    margin-bottom: 0.5rem;
     border-style: solid;
     border-color: rgb(186, 35, 35);
     border-radius: 3px;
     background-color: rgb(221, 101, 101);
     width: 6rem;
-    height: 3rem;
+    height: 4rem;
     color: rgb(80, 0, 0);
     font-weight: 700;
     font-size: 1.25rem;
-    order: -1;
+    position: relative;
+    bottom: 2px;
+}
+#showGrid:hover
+{
+    color: rgb(195, 195, 195);
+    background-color: #323436;
+    border:none;
+}
+#showGrid
+{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    border-style: solid;
+    border-color: rgb(104, 104, 104);
+    border-radius: 3px;
+    background-color: rgb(195, 195, 195);
+    width: 10rem;
+    height: 4rem;
+    color: #323436;
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 #generate
 {
@@ -72,7 +99,6 @@ h2
     font-weight: 500;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
-    margin-bottom: 0.5rem;
     border-style: solid;
     border-color: rgb(27, 185, 27);
     border-radius: 3px;
@@ -86,8 +112,7 @@ h2
 #mainBtn
 {
     margin-top: 1%;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 5%;
     justify-content: center;
     align-items: flex-end;
 }
@@ -102,7 +127,7 @@ h2
 #centerContent
 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: column;
 }

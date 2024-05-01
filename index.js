@@ -1,10 +1,9 @@
 // Initializes the nr of rows and columns
 let nrOfRows;
-let nrOfColumns;
 let nrOfSquares;
 let previous;
 // Initializes the main div as an variable
-let mainContainer = document.querySelector("#main");
+let mainContainer = document.querySelector(".main");
 
 // Creates a function that gets the Grid Size and updates the sketchpad
 function genGridSize() {
@@ -13,20 +12,15 @@ function genGridSize() {
   for (let square of squares) {
     mainContainer.removeChild(square);
   }
-
   // Prompts the nr of rows and nr of columns and checks if they are the correct data type and quantaty[Number - in my case]
   do {
-    nrOfRows = prompt("Input how many rows you want: ");
-  } while (nrOfRows < 1 || nrOfRows > 50 || isNaN(nrOfRows));
-
-  do {
-    nrOfColumns = prompt("Input how many columns you want: ");
-  } while (nrOfColumns < 1 || nrOfColumns > 50 || isNaN(nrOfColumns));
-  // Calculates the neccesary nr of squares
-  nrOfSquares = nrOfRows * nrOfColumns;
+    nrOfRows = prompt("Setup the canvas resolution in pixels: -> Max-Resolution is: 64px");
+  } while (nrOfRows < 3 || nrOfRows > 64 || isNaN(nrOfRows));
+  	
+  nrOfSquares = Math.pow(nrOfRows, 2);
 
   // Adds the grid-template to match the nr of rows and nr of columns
-  mainContainer.style = `grid-template: repeat(${nrOfRows}, 1fr) / repeat(${nrOfColumns}, 1fr);`;
+  mainContainer.style = `grid-template: repeat(${nrOfRows}, 1fr) / repeat(${nrOfRows}, 1fr);`;
 
   // Creates squares and appends them to the grid
   for (let i = 0; i < nrOfSquares; i++) {
@@ -67,7 +61,7 @@ for(let x = 0; x < document.querySelectorAll(".colors").length; x++)
 			button.forEach(function(btn){
 			  btn.style = '';
 		  });
-			this.style = "transition-duration: 200ms; transition-timing-function: ease-in-out; border-radius:50px; border: solid 5px #3e3e3e;";
+			this.style = "transition-duration: 200ms; transition-timing-function: ease-in-out; border-radius:50px; border: solid 3px #3e3e3e;";
 		}
 	}
 }
@@ -97,6 +91,18 @@ function fillWhileMoving()
 	}
 }
 }
+
+// Shows Grid Lines
+document.querySelector("#showGrid").addEventListener("click", function(){
+	if(mainContainer.querySelectorAll(".square").length > 1)
+	{
+		mainContainer.classList.toggle("GridLines")
+	}
+	else{
+		alert("There is no grid to show! -> First Create The Canvas")
+	}
+})
+
 // Resets the grid to a preset style
 function remGrid() {
 
