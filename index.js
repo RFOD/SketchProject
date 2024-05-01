@@ -13,15 +13,14 @@ function genGridSize() {
     mainContainer.removeChild(square);
   }
 
-  // Prompts the nr of rows and nr of columns and checks if they are the correct data type [Number - in my case]
+  // Prompts the nr of rows and nr of columns and checks if they are the correct data type and quantaty[Number - in my case]
   do {
     nrOfRows = prompt("Input how many rows you want: ");
-  } while (isNaN(nrOfRows));
+  } while (nrOfRows < 1 || nrOfRows > 35 || isNaN(nrOfRows));
 
   do {
     nrOfColumns = prompt("Input how many columns you want: ");
-  } while (isNaN(nrOfColumns));
-
+  } while (nrOfColumns < 1 || nrOfColumns > 35 || isNaN(nrOfColumns));
   // Calculates the neccesary nr of squares
   nrOfSquares = nrOfRows * nrOfColumns;
 
@@ -65,5 +64,13 @@ removeButton.addEventListener("click", remGrid);
 // To-Do for tomorrow:
 
 // U have to make it so it is preseted to 16x16 and when its seted by the button it resets the current styles and removes the current squares...
+// DONE! 
+// < ------------------------------------------------------------------------------------------------------------------------------------ >
 // Make the button look better
+// 
+// onGOING ! -> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ->
+// 
 // Add the necessary functionality, from here: https://www.theodinproject.com/lessons/foundations-etch-a-sketch
+// 
+// onGOING ! -> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ->
+// 
