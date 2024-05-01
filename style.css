@@ -9,12 +9,11 @@ body{
     display: grid;
     gap: 2px;
     padding: 2px;
-    padding-bottom: 0;
     width: 980px;
     height: 980px;
     margin-left: 5rem;
 }
-.black
+.square
 {
     background-color: white;
 }
