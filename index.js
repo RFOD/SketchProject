@@ -36,7 +36,28 @@ function genGridSize() {
 
 // IMPLEMENTING PAINTING FEAUTURES
 
+
 let colorClass = "grey";
+// added Event Listener To Erase Button for Double Click
+document.querySelector(".erase").addEventListener("dblclick", clearCanvas)
+
+function clearCanvas()
+{
+
+	console.log("Double KIlll!")
+	for (let y of mainContainer.querySelectorAll(".square"))
+	{
+		y.classList.remove("grey", "red", "blue", "pink","purple","yellow","green","erase");
+	}
+
+}
+for(let x = 0; x < document.querySelectorAll(".colors").length; x++)
+{
+	document.querySelectorAll("#clrContainer .colors")[x].addEventListener("click", function() 
+	{	colorClass = this.classList[1];
+		console.log(colorClass);
+	})
+}
  
 let mouseIsDown = false;
 mainContainer.addEventListener("mousedown", function() {mouseIsDown = true; console.log("Mouse is down!")})
@@ -44,26 +65,24 @@ mainContainer.addEventListener("mouseup", function() {mouseIsDown = false; conso
 
 for (let temp = 0; temp < mainContainer.querySelectorAll(".square").length; temp++)
 {
-	mainContainer.querySelectorAll(".square")[temp].addEventListener("click", fillOnClick)
-	mainContainer.querySelectorAll(".square")[temp].addEventListener("mousemove", fillWhileMoving)
+	mainContainer.querySelectorAll(".square")[temp].addEventListener("click", fillOnClick);
+	mainContainer.querySelectorAll(".square")[temp].addEventListener("mousemove", fillWhileMoving);
 }
 
 function fillOnClick()
 {
-	this.classList.remove("black", "red", "blue", "white")
+	this.classList.remove("grey", "red", "blue", "pink","purple","yellow","green","erase");
 	this.classList.add(colorClass);
 }
 function fillWhileMoving()
 {
 	if (mouseIsDown)
 	{
-		this.classList.remove("black", "red", "blue", "white")
+		this.classList.remove("grey", "red", "blue", "pink","purple","yellow","green","erase");
 		event.target.classList.add(colorClass);
 	}
 }
-  
 }
-
 // Resets the grid to a preset style
 function remGrid() {
 
@@ -87,18 +106,19 @@ generateButton.addEventListener("click", genGridSize);
 
 // Adds event listener to button to listen for click to start the generating grid function
 let removeButton = document.querySelector("#reset");
-removeButton.addEventListener("click", remGrid);
+removeButton.addEventListener("dblclick", remGrid);
 
-// To-Do for tomorrow:
+// To-Do's for future development:
 
-// U have to make it so it is preseted to 16x16 and when its seted by the button it resets the current styles and removes the current squares...
-// DONE! 
-// < ------------------------------------------------------------------------------------------------------------------------------------ >
-// Make the button look better
+// Style the site and make it responsive
 // 
 // onGOING ! -> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ->
 // 
-// Add the necessary functionality, from here: https://www.theodinproject.com/lessons/foundations-etch-a-sketch
+// ADD dark theme
+// 
+// onGOING ! -> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ->
+// 
+// Make it multiplayer :))
 // 
 // onGOING ! -> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ->
 // 
