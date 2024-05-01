@@ -2,6 +2,7 @@
 let nrOfRows;
 let nrOfColumns;
 let nrOfSquares;
+let previous;
 // Initializes the main div as an variable
 let mainContainer = document.querySelector("#main");
 
@@ -53,11 +54,24 @@ function clearCanvas()
 }
 for(let x = 0; x < document.querySelectorAll(".colors").length; x++)
 {
+
 	document.querySelectorAll("#clrContainer .colors")[x].addEventListener("click", function() 
-	{	colorClass = this.classList[1];
+	{	
+		colorClass = this.classList[1];
 		console.log(colorClass);
 	})
+	var button = document.querySelectorAll("#clrContainer .colors")
+
+	for(var i =0; i< button.length; i++){
+		button[i].onclick = function(){
+			button.forEach(function(btn){
+			  btn.style = '';
+		  });
+			this.style = "transition-duration: 200ms; transition-timing-function: ease-in-out; border-radius:50px; border: solid 5px #3e3e3e;";
+		}
+	}
 }
+
  
 let mouseIsDown = false;
 mainContainer.addEventListener("mousedown", function() {mouseIsDown = true; console.log("Mouse is down!")})

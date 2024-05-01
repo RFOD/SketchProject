@@ -34,8 +34,25 @@ h2
     align-items: flex-end;
     margin-top: 5rem;
 }
+#reset:hover
+{
+    color: rgb(254, 222, 222);
+    background-color: rgb(203, 0, 0);
+    border:none;
+}
+#generate:hover
+{
+    color: #eefef2;
+    background-color: rgb(69, 187, 69);
+    border:none;
+}
 #reset
 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
     margin-bottom: 0.5rem;
     border-style: solid;
     border-color: rgb(186, 35, 35);
@@ -45,11 +62,16 @@ h2
     height: 3rem;
     color: rgb(80, 0, 0);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.25rem;
     order: -1;
 }
 #generate
 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
     margin-bottom: 0.5rem;
     border-style: solid;
     border-color: rgb(27, 185, 27);
@@ -59,7 +81,7 @@ h2
     height: 4rem;
     color: #125e26;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 #mainBtn
 {
@@ -93,10 +115,10 @@ h2
 .colors
 {
     border-style: none;
-    border-radius: 3px;
+    border-radius: 20px;
     width: 10rem;
     height: 5rem;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
 }
 /* Animation on hover */
@@ -148,24 +170,36 @@ button.colors.purple:hover
 /* Animation on hover */
 button.colors.green
 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
     color: rgb(146, 216, 146);
 }
 button.colors.pink
 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
     color: #F4C2C2;
 }
 button.colors.grey
 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
     color: rgb(175, 175, 175);
 }
 button.colors.erase
 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
     background-color: #f1f1f1;
@@ -173,21 +207,33 @@ button.colors.erase
 }
 button.colors.blue
 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
 }
 button.colors.yellow
 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
 }
 button.colors.red
 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
 }
 button.colors.purple
 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
 }
