@@ -1,27 +1,25 @@
 // Initializes the nr of rows and columns
-let nrOfRows ;
-let nrOfColumns ;
+let nrOfRows;
+let nrOfColumns;
 let nrOfSquares;
 // Initializes the main div as an variable
 let mainContainer = document.querySelector("#main");
 
 // Creates a function that gets the Grid Size and updates the sketchpad
 function genGridSize() {
-
   // Loops to remove the squares inside a node list
-	let squares = mainContainer.querySelectorAll("div");
-	for (let square of squares) 
-	{
-		mainContainer.removeChild(square);
-  	}
-  
+  let squares = mainContainer.querySelectorAll("div");
+  for (let square of squares) {
+    mainContainer.removeChild(square);
+  }
+
   // Prompts the nr of rows and nr of columns and checks if they are the correct data type [Number - in my case]
   do {
-	nrOfRows = prompt("Input how many rows you want: ");
+    nrOfRows = prompt("Input how many rows you want: ");
   } while (isNaN(nrOfRows));
-  
+
   do {
-	nrOfColumns = prompt("Input how many columns you want: ");
+    nrOfColumns = prompt("Input how many columns you want: ");
   } while (isNaN(nrOfColumns));
 
   // Calculates the neccesary nr of squares
@@ -40,25 +38,20 @@ function genGridSize() {
 
 // Resets the grid to a preset style
 function remGrid() {
+  console.log("Shit be working!");
 
-    console.log("Shit be working!")
-
-// Calculates the needed amount of squares
-    let nrOfSquares = nrOfColumns * nrOfRows;
-
-// Loops to remove the squares
-    for (let j = 0; j < nrOfSquares; j++) 
-  {
-	let square = mainContainer.querySelector("div");
-	mainContainer.removeChild(square);
+  // Loops to remove the squares
+  let squares = mainContainer.querySelectorAll("div");
+  for (let square of squares) {
+    mainContainer.removeChild(square);
   }
-// Resets the grid-template and adds a temporary div to act as a block
+  // Resets the grid-template and adds a temporary div to act as a block
   mainContainer.style = "grid-template: 980px / 980px";
   square = document.createElement("div");
 
-// Adds the square/div to the main container and gives a class name with a predefined style
+  // Adds the square/div to the main container and gives a class name with a predefined style
   mainContainer.appendChild(square);
-  mainContainer.querySelector("div").classList.add("square")
+  mainContainer.querySelector("div").classList.add("square");
 }
 
 // Adds event listener to button to listen for click to start the generating grid function
