@@ -6,6 +6,15 @@ body{
     height: 90vh;
 }
 
+h2
+{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 3rem;
+    margin: 1rem;
+}
+
 #main
 {
     background-color: black;

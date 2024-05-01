@@ -122,3 +122,7 @@ removeButton.addEventListener("dblclick", remGrid);
 // 
 // onGOING ! -> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ->
 // 
+// Add Shade of the same color options :)
+// 
+// onGOING ! -> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ->
+// 
