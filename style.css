@@ -2,7 +2,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
+    height: 90vh;
 }
+
 #main
 {
     background-color: black;
@@ -11,9 +14,116 @@ body{
     padding: 1px;
     width: 980px;
     height: 980px;
-    margin-left: 5rem;
+    margin-left: 1rem;
+}
+#panel
+{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 72.5vh;
+    align-items: flex-end;
+}
+#reset
+{
+    margin-bottom: 0.5rem;
+    border-style: solid;
+    border-color: rgb(186, 35, 35);
+    border-radius: 3px;
+    background-color: rgb(221, 101, 101);
+    width: 6rem;
+    height: 3rem;
+    color: rgb(80, 0, 0);
+    font-weight: 700;
+    font-size: 1rem;
+    order: -1;
+}
+#generate
+{
+    margin-bottom: 0.5rem;
+    border-style: solid;
+    border-color: rgb(27, 185, 27);
+    border-radius: 3px;
+    background-color: rgb(163, 211, 163);
+    width: 15rem;
+    height: 4rem;
+    color: #125e26;
+    font-weight: 700;
+    font-size: 1rem;
+}
+#mainBtn
+{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#clrContainer
+{
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+/* .shade
+{
+    margin-bottom: 2rem;
+    width: 3rem;
+    height: 1rem;
+} */
+.colors
+{
+    border-style: none;
+    border-radius: 3px;
+    width: 10rem;
+    height: 5rem;
+    font-size: 20px;
+    font-weight: 600;
+}
+button.colors.green
+{
+    color: rgb(146, 216, 146);
+}
+button.colors.pink
+{
+    color: rgb(150, 66, 94);
+}
+button.colors.grey
+{
+    color: rgb(175, 175, 175);
 }
 .square
 {
     background-color: white;
 }
+.grey
+{
+    background-color: #323436;
+}
+.blue
+{
+    background-color: #007FFF;
+}
+.red
+{
+    background-color: #ED2039;
+}
+.green
+{
+    background-color: #125e26;
+}
+.purple
+{
+    background-color: #8F00FF;
+}
+.pink
+{
+    background-color: #F4C2C2;
+}
+.yellow
+{
+    background-color: #FFEF00;
+}
+

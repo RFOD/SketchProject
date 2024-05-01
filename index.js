@@ -16,11 +16,11 @@ function genGridSize() {
   // Prompts the nr of rows and nr of columns and checks if they are the correct data type and quantaty[Number - in my case]
   do {
     nrOfRows = prompt("Input how many rows you want: ");
-  } while (nrOfRows < 1 || nrOfRows > 35 || isNaN(nrOfRows));
+  } while (nrOfRows < 1 || nrOfRows > 50 || isNaN(nrOfRows));
 
   do {
     nrOfColumns = prompt("Input how many columns you want: ");
-  } while (nrOfColumns < 1 || nrOfColumns > 35 || isNaN(nrOfColumns));
+  } while (nrOfColumns < 1 || nrOfColumns > 50 || isNaN(nrOfColumns));
   // Calculates the neccesary nr of squares
   nrOfSquares = nrOfRows * nrOfColumns;
 
@@ -33,11 +33,39 @@ function genGridSize() {
     mainContainer.appendChild(square);
     square.classList.add("square");
   }
+
+// IMPLEMENTING PAINTING FEAUTURES
+
+let colorClass = "grey";
+ 
+let mouseIsDown = false;
+mainContainer.addEventListener("mousedown", function() {mouseIsDown = true; console.log("Mouse is down!")})
+mainContainer.addEventListener("mouseup", function() {mouseIsDown = false; console.log("Mouse is up!")})
+
+for (let temp = 0; temp < mainContainer.querySelectorAll(".square").length; temp++)
+{
+	mainContainer.querySelectorAll(".square")[temp].addEventListener("click", fillOnClick)
+	mainContainer.querySelectorAll(".square")[temp].addEventListener("mousemove", fillWhileMoving)
+}
+
+function fillOnClick()
+{
+	this.classList.remove("black", "red", "blue", "white")
+	this.classList.add(colorClass);
+}
+function fillWhileMoving()
+{
+	if (mouseIsDown)
+	{
+		this.classList.remove("black", "red", "blue", "white")
+		event.target.classList.add(colorClass);
+	}
+}
+  
 }
 
 // Resets the grid to a preset style
 function remGrid() {
-  console.log("Shit be working!");
 
   // Loops to remove the squares
   let squares = mainContainer.querySelectorAll("div");
@@ -46,7 +74,7 @@ function remGrid() {
   }
   // Resets the grid-template and adds a temporary div to act as a block
   mainContainer.style = "grid-template: 980px / 980px";
-  square = document.createElement("div");
+  let square = document.createElement("div");
 
   // Adds the square/div to the main container and gives a class name with a predefined style
   mainContainer.appendChild(square);
@@ -58,7 +86,7 @@ let generateButton = document.querySelector("#generate");
 generateButton.addEventListener("click", genGridSize);
 
 // Adds event listener to button to listen for click to start the generating grid function
-let removeButton = document.querySelector("#remove");
+let removeButton = document.querySelector("#reset");
 removeButton.addEventListener("click", remGrid);
 
 // To-Do for tomorrow:
